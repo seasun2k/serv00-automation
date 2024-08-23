@@ -87,8 +87,23 @@ def serverchan_push(text, desp):
         result = response.read().decode('utf-8')
     return result
 
+def anpush_push(title,content):
+    url = "https://api.anpush.com/push/X3NGJ5WAMI7WZLF3I2H7USNE1FW99O"
+    payload = {
+        "title": title,
+        "content": content,
+        "channel": "30820"
+    }
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded"
+    }
+    response = requests.post(url, headers=headers, data=payload)
+    print(response.text)
+
 if push == "mail":
     mail_push('https://zzzwb.us.kg/test')
+elif push == "anpush":
+    anpush_push('login serv00',time)
 elif push == "serverchan":
     serverchan_push('login serv00',time)
 elif push == "telegram":
