@@ -34,7 +34,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           
         run:
-           echo $PUSH
-           echo $SSH_INOF
-           echo $SENDKEY
+           import os
+           for q in (os.getenv("PUSH")):
+             print(q) 
            python run.py
