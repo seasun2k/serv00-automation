@@ -76,8 +76,18 @@ def telegram_push(message):
     if response.status_code != 200:
         print(f"发送消息到Telegram失败: {response.text}")
 
+def serverchan_push(message):
+    postdata = urllib.parse.urlencode({'text': message, 'desp':''}).encode('utf-8')
+    url = f'https://sctapi.ftqq.com/{os.getenv('SENDKEY')}.send'
+    req = urllib.request.Request(url, data=postdata, method='POST')
+    with urllib.request.urlopen(req) as response:
+        result = response.read().decode('utf-8')
+    return result
+
 if push == "mail":
     mail_push('https://zzzwb.us.kg/test')
+elif push == "serverchan":
+    serverchan_push(content)
 elif push == "telegram":
     telegram_push(content)
 else:
