@@ -42,6 +42,7 @@ loginip = requests.get('https://api.ipify.org?format=json').json()['ip']
 content += f"本次登录用户共： {user_num} 个\n登录时间：{time}\n登录IP：{loginip}"
 
 push = os.getenv('PUSH')
+print("get from en sun")
 print(push)
 
 def mail_push(url):
@@ -95,4 +96,4 @@ elif push == "serverchan":
 elif push == "telegram":
     telegram_push(content)
 else:
-    print("推送失败，推送参数设置错误",push)
+    print("推送失败，推送参数设置错误")
