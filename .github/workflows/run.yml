@@ -34,7 +34,4 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           
         run:
-           import os
-           for q in (os.getenv("PUSH"))
-             print(q) 
            python run.py
