@@ -80,7 +80,8 @@ def telegram_push(message):
 
 def serverchan_push(text, desp):
     postdata = urllib.parse.urlencode({'text': text, 'desp':desp}).encode('utf-8')
-    url = f'https://sctapi.ftqq.com/{os.getenv('SENDKEY')}.send'
+    #url = f'https://sctapi.ftqq.com/{os.getenv('SENDKEY')}.send'
+    url = f'https://sctapi.ftqq.com/SCT253240TPdt2qZzPRLgMaKNeveib4LR5.send'
     req = urllib.request.Request(url, data=postdata, method='POST')
     with urllib.request.urlopen(req) as response:
         result = response.read().decode('utf-8')
