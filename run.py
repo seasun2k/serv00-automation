@@ -93,4 +93,4 @@ elif push == "serverchan":
 elif push == "telegram":
     telegram_push(content)
 else:
-    print("推送失败，推送参数设置错误")
+    print("推送失败，推送参数设置错误 {push}")
