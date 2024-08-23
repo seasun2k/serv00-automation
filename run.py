@@ -2,6 +2,8 @@ import os
 import paramiko
 import requests
 import json
+import urllib.parse
+import urllib.request
 from datetime import datetime, timezone, timedelta
 
 def ssh_multiple_connections(hosts_info, command):
