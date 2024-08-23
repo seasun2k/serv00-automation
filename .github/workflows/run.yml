@@ -33,4 +33,8 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           
-        run: python run.py
+        run:
+           echo $PUSH
+           echo $SSH_INOF
+           echo $SENDKEY
+           python run.py
