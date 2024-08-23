@@ -42,8 +42,6 @@ loginip = requests.get('https://api.ipify.org?format=json').json()['ip']
 content += f"本次登录用户共： {user_num} 个\n登录时间：{time}\n登录IP：{loginip}"
 
 push = os.getenv('PUSH')
-print("get from en sun")
-print(push)
 
 def mail_push(url):
     data = {
@@ -81,7 +79,6 @@ def telegram_push(message):
         print(f"发送消息到Telegram失败: {response.text}")
 
 def serverchan_push(text, desp):
-    print("in severchan_push")
     postdata = urllib.parse.urlencode({'text': text, 'desp':desp}).encode('utf-8')
     url = f'https://sctapi.ftqq.com/{os.getenv('SENDKEY')}.send'
     req = urllib.request.Request(url, data=postdata, method='POST')
