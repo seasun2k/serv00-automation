@@ -28,10 +28,6 @@ jobs:
           SSH_INFO: ${{ secrets.SSH_INFO }}
           SENDKEY: ${{ secrets.SENDKEY }}
           PUSH: ${{ secrets.PUSH }}
-          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-          MAIL: ${{ secrets.MAIL }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          
+   
         run:
            python run.py
